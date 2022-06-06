@@ -12,26 +12,38 @@ $(document).ready(function () {
     });
     // animate scroll element 
     $(window).scroll(function () {
-        if ($(this).scrollTop() > (($('.what-teplo').offset().top)-200)) {
-            $('.what-teplo__item').animate({
+        if ($(this).scrollTop() > (($('.what-teplo').offset().top) - 200)) {
+            $('.what-teplo__item.one').animate({
                 left: 0,
-            }, 500,'linear'
+            }, 500, 'linear'
+
+
+            );
+            $('.what-teplo__item.two').animate({
+                left: 0,
+            }, 700, 'linear'
+
+
+            );
+            $('.what-teplo__item.three').animate({
+                left: 0,
+            }, 900, 'linear'
 
 
             );
 
         }
-      
-        if ($(this).scrollTop() > (($('.franchise-packages').offset().top)-200)) {
-            $('.left').animate ({
+
+        if ($(this).scrollTop() > (($('.franchise-packages').offset().top) - 200)) {
+            $('.left').animate({
                 left: 0,
                 opacity: 1,
-                
+
             }, 500)
-            $('.right').animate ({
+            $('.right').animate({
                 left: 0,
                 opacity: 1,
-                
+
             }, 500)
         }
     })
@@ -53,21 +65,25 @@ $(document).ready(function () {
 
 
     // ссылка якорь
-    $('a[href^="#"]').on('click', function(e) { // Если ссылка является якорем, то выполняем следующее:
+    $('a[href^="#"]').on('click', function (e) { // Если ссылка является якорем, то выполняем следующее:
         let link = $(this).attr('href'), // берём ссылку якоря. Она же по факту id элемента
             el = $(document).find(link); // ищем элемент
-        if(el.length > 0) { // если он существует
-        
+        if (el.length > 0) { // если он существует
 
-          el = el.eq(0).offset().top;// берём ПЕРВЫЙ элемент
-          $('.menu').removeClass('active');
-          $('.header__burger').removeClass('active');
-          $('html, body').animate({
-            scrollTop: (el-100) +'px' // выполняем к нему скролл
-          }, 500);
+
+            el = el.eq(0).offset().top;// берём ПЕРВЫЙ элемент
+            $('.menu').removeClass('active');
+            $('.header__burger').removeClass('active');
+            $('html, body').animate({
+                scrollTop: (el - 100) + 'px' // выполняем к нему скролл
+            }, 500);
         }
         return false; // Отменяем переход по ссылке => и вывод якоря в адресную строку
-      });
+    });
+    // cлайдер
+    $('.slider-financial').slick();
+
+
 
 
 

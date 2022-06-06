@@ -5,9 +5,14 @@
 /* Слайдер с точками */
 .slick-slider.slick-dotted{}
 /* Ограничивающая оболочка */
-.slick-list {}
+.slick-list {
+    overflow: hidden;
+}
 /* Лента слайдов */
-.slick-track{}
+.slick-track{
+    display: flex;
+    
+}
 /* Слайд */
 .slick-slide{}
 /* Слайд активный (показывается) */
@@ -19,7 +24,12 @@
 /* Клонированный слайд */
 .slick-slide.slick-cloned{}
 /* Стрелка */
-.slick-arrow{}
+.slick-arrow{
+    font-size: 0;
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+}
 /* Стрелка влево */
 .slick-arrow.slick-prev{}
 /* Стрелка вправо */
@@ -33,3 +43,34 @@
 .slick-dots li.slick-active{}
 /* Элемент точки */
 .slick-dots li button{}
+
+// слайдер финансовых показателей
+.slider-financial {
+
+
+    & .slick-arrow {
+
+    }
+    & .slick-arrow.slick-next {
+        right: 0;
+        background: url('../img/main/financial-indicators/arrows-left.svg') no-repeat;
+        background-position: center center;
+        background-size: contain;
+        width: 50px;
+        height: 50px;
+  
+      
+     
+    }
+    & .slick-arrow.slick-prev {
+        left: 0;
+        background: url('../img/main/financial-indicators/arrows-right.svg') no-repeat;
+        background-position: center center;
+        background-size: contain;
+        width:50px;
+        height: 50px;
+
+       
+
+    }
+}
