@@ -82,6 +82,9 @@ $(document).ready(function () {
     });
     // cлайдер
     $('.slider-financial').slick();
+    $('.shope__slider').slick({
+        adaptiveHeight: true,
+    });
 
 
 

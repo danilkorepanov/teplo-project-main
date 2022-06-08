@@ -139,6 +139,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Слайд */
+.slick-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 /* Слайд активный (показывается) */
 /* Слайд основной */
 /* Слайд по центру */
@@ -152,7 +164,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Стрелка влево */
+.slick-arrow.slick-prev {
+  left: 0;
+  background: url("../img/main/financial-indicators/arrows-right.svg") no-repeat;
+  background-position: center center;
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+}
+
 /* Стрелка вправо */
+.slick-arrow.slick-next {
+  right: 0;
+  background: url("../img/main/financial-indicators/arrows-left.svg") no-repeat;
+  background-position: center center;
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+}
+
 /* Стрелка не активная */
 /* Точки (булиты) */
 /* Активная точка */
@@ -1354,5 +1384,34 @@ span {
 @media (max-width: 500px) {
   .uniform__item-two img {
     max-width: 100px;
+  }
+}
+
+.shope {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(1, 1, 1, 0.3)), to(rgba(1, 1, 1, 0.3))), url("../img/main/bg.png") no-repeat;
+  background: linear-gradient(rgba(1, 1, 1, 0.3), rgba(1, 1, 1, 0.3)), url("../img/main/bg.png") no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.shope__slider {
+  position: relative;
+}
+
+.shope__item img {
+  max-height: 500px;
+  border-radius: 15px;
+}
+
+@media (max-width: 780px) {
+  .shope__item img {
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 780px) and (max-width: 580px) {
+  .shope__item img {
+    max-height: 300px;
+    max-width: 280px;
   }
 }

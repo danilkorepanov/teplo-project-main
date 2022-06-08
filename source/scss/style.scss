@@ -1094,5 +1094,38 @@ span {
 
 	}
 }
+// ============================shope===========================
+.shope {
+	background: linear-gradient(rgba(1,1,1, 0.3), rgba(1,1,1,0.3)) ,url('../img/main/bg.png') no-repeat;
+	background-position: center center;
+	background-size: cover;
+
+
+	&__container {
+
+	}
+
+	&__slider {
+		position: relative;
+
+	}
+
+	&__item {
+		
+
+		img {
+			max-height: 500px;
+			border-radius: 15px;
+			@media (max-width:780px) {
+				max-height: 400px;
+				@media (max-width:580px) {
+					max-height: 300px;
+					max-width: 280px;
+				}
+			}
+		}
+	}
+}
+
 
 

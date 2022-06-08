@@ -1,76 +1,103 @@
 /* Слайдер */
-.slick-slider{}
+.slick-slider {
+}
 /* Слайдер запущен */
-.slick-slider.slick-initialized{}
+.slick-slider.slick-initialized {
+}
 /* Слайдер с точками */
-.slick-slider.slick-dotted{}
+.slick-slider.slick-dotted {
+}
 /* Ограничивающая оболочка */
 .slick-list {
     overflow: hidden;
 }
 /* Лента слайдов */
-.slick-track{
+.slick-track {
     display: flex;
-    
+
 }
 /* Слайд */
-.slick-slide{}
+.slick-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
 /* Слайд активный (показывается) */
-.slick-slide.slick-active{}
+.slick-slide.slick-active {
+}
 /* Слайд основной */
-.slick-slide.slick-current{}
+.slick-slide.slick-current {
+}
 /* Слайд по центру */
-.slick-slide.slick-center{}
+.slick-slide.slick-center {
+}
 /* Клонированный слайд */
-.slick-slide.slick-cloned{}
+.slick-slide.slick-cloned {
+}
 /* Стрелка */
-.slick-arrow{
+.slick-arrow {
     font-size: 0;
     position: absolute;
     z-index: 10;
     top: 50%;
 }
 /* Стрелка влево */
-.slick-arrow.slick-prev{}
+.slick-arrow.slick-prev {
+    left: 0;
+    background: url("../img/main/financial-indicators/arrows-right.svg") no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+}
 /* Стрелка вправо */
-.slick-arrow.slick-next{}
+.slick-arrow.slick-next {
+    right: 0;
+    background: url("../img/main/financial-indicators/arrows-left.svg") no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+}
 /* Стрелка не активная */
-.slick-arrow.slick-disabled{}
+.slick-arrow.slick-disabled {
+}
 /* Точки (булиты) */
-.slick-dots{}
-.slick-dots li{}
+.slick-dots {
+}
+.slick-dots li {
+}
 /* Активная точка */
-.slick-dots li.slick-active{}
+.slick-dots li.slick-active {
+}
 /* Элемент точки */
-.slick-dots li button{}
+.slick-dots li button {
+}
 
 // слайдер финансовых показателей
 .slider-financial {
-
-
     & .slick-arrow {
-
     }
     & .slick-arrow.slick-next {
         right: 0;
-        background: url('../img/main/financial-indicators/arrows-left.svg') no-repeat;
+        background: url("../img/main/financial-indicators/arrows-left.svg") no-repeat;
         background-position: center center;
         background-size: contain;
         width: 50px;
         height: 50px;
-  
-      
-     
     }
     & .slick-arrow.slick-prev {
         left: 0;
-        background: url('../img/main/financial-indicators/arrows-right.svg') no-repeat;
+        background: url("../img/main/financial-indicators/arrows-right.svg") no-repeat;
         background-position: center center;
         background-size: contain;
-        width:50px;
+        width: 50px;
         height: 50px;
-
-       
-
+    }
+}
+//========================shope=====================
+.shope {
+    &.slick-track {
     }
 }
