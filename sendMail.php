@@ -30,6 +30,9 @@ if (trim(!empty($_POST['email']))) {
 if (trim(!empty($_POST['phone']))) {
     $body .= '<p><strong>Номер:</strong>' . $_POST['phone'] . '</p>';
 };
+if (trim(!empty($_POST['phone']))) {
+    $body .= '<p><strong>Номер:</strong>' . $_POST['text'] . '</p>';
+};
 
 $mail->Body = $body;
 

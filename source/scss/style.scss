@@ -164,7 +164,10 @@ span {
 		margin: 0px 0px 30px 0px;
 		padding: 5px;
 		&._error {
-			box-shadow: 0 0 15px red;
+			input{
+				box-shadow: 0 0 15px red;
+
+			}
 		}
 	}
 
@@ -190,6 +193,7 @@ span {
 	&__error {
 		display: none;
 		font-size: 13px;
+		margin: 30px 0px 0px 0px;
 	}
 
 	&__error-hide {
@@ -1139,6 +1143,144 @@ span {
 					max-width: 280px;
 				}
 			}
+		}
+	}
+}
+//====================maps======================
+
+
+//==================================feedback-visable==================
+.feedback-visable {
+	background: linear-gradient(rgba(1,1,1, 0.9), rgba(1,1,1,0.9)) ,url('/img/main/feedback-visable/bg.jpg') no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-attachment: fixed;
+
+
+
+
+
+	&__container {
+
+	}
+	&__body-title {
+		
+	}
+	&__feedback {
+	}
+	&__title {
+		margin: 40px 0px 10px 0px;
+		text-align: center;
+		font-size: 15px;
+		line-height: 1.2;
+	}
+
+	&__form {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		
+		
+		
+		
+	}
+
+	&__item{
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 0px 0px 30px 0px;
+		padding: 5px;
+		width: 350px;
+		&._error {
+			input{
+				box-shadow: 0 0 15px red;
+
+			}
+			
+		}
+		textarea {
+			max-width: 350px;
+			min-width: 350px;
+			min-height: 150px;
+			max-height: 150px;
+			@media (max-width:380px) {
+				max-width: 250px;
+			min-width: 250px;
+			min-height: 150px;
+			max-height: 150px;
+			}
+		}
+	}
+
+	&__label {
+		margin: 0px 0px 5px 0px;
+	}
+
+	&__control {
+		background: rgba(29,29,29,0.5);
+		width: 350px;
+		height: 35px;
+		border-bottom: 1px solid rgb(255, 153, 0);
+		color: #fff;
+		@media (max-width:500px) {
+			width: 250px;
+		}
+		
+
+	}
+
+
+
+	&__error {
+		display: none;
+		font-size: 13px;
+		margin: 30px 0px 0px 0px;
+	}
+
+	&__error-hide {
+		display: block;
+		
+		
+	}
+
+	&__submit {
+		margin: 30px 0px 0px 0px;
+		
+
+	}
+	&__submit-button {
+		width: 250px;
+		height: 50px;
+		border-radius: 30px;
+		background: rgb(255, 255, 255) ;
+		color: #000;
+		text-transform: uppercase;
+		cursor: pointer;
+		font-weight: 700;
+		box-shadow: 0 5px 0 rgb(163, 162, 162) ;
+		transition: background 0.4s ease 0s;
+		position: relative;
+		top: 0;
+		
+		&:hover {
+			background:rgb(117, 117, 117) ;
+			border: 1px solid #fff;
+		}
+		&:active{
+			box-shadow:0;
+			top: 3px;
+
+		}
+
+	}
+	&__success-message {
+		display: none;
+		&.active {
+			display: block;
 		}
 	}
 }

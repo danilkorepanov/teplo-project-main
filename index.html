@@ -21,6 +21,7 @@
 	<div class="wrapper">
 		<div class="feedback">
 			<div class="feedback__container _container">
+
 				<h1 class="feedback__title">
 					Получить бизнес план
 				</h1>
@@ -48,12 +49,13 @@
 							placeholder="Номер телефона">
 					</div>
 
-					<div class="feedback__error ">Форма заполнена не верно</div>
+
 
 					<!-- Кнопка для отправки формы на сервер -->
 					<div class="feedback__submit">
 						<button class="feedback__submit-button" type="submit">Отправить сообщение</button>
 					</div>
+					<div class="feedback__error ">Форма заполнена не верно</div>
 
 
 				</form>
@@ -594,13 +596,74 @@
 					<div>
 			</section>
 			<section class="maps">
-				<script type="text/javascript" charset="utf-8" async
-					src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A9ee6f01c3bf04a9ef376c50d17a933bd4dcea35c3c116d852565155d0e362ffc&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+				<div class='maps__container _container'>
+					<script type="text/javascript" charset="utf-8" async
+						src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A9ee6f01c3bf04a9ef376c50d17a933bd4dcea35c3c116d852565155d0e362ffc&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+					<div>
+
+			</section>
+			<section class="feedback-visable">
+				<div class="feedback-visable__container _container">
+					<div class="feedback-visable__body">
+
+						<div class="feedback-visable__feedback">
+							<div class="feedback-visable__title">
+								<h3 class="title">Остались вопросы?</h3>
+								Тогда свяжитесь с нами или оставьте сообщение
+							</div>
+							<form action="#" enctype="multipart/form-data" novalidate class="feedback-visable__form"
+								id="form-visable">
+
+								<!-- Имя пользователя -->
+								<div class="feedback-visable__item">
+									<label for="ForName" class="feedback-visable__label">Имя*:</label>
+									<input id="ForName" type="text" name="name" class="feedback-visable__control _req"
+										placeholder="Имя">
+
+								</div>
+								<!-- Email пользователя -->
+								<div class="feedback-visable__item">
+									<label for="ForEmail" class="feedback-visable__label">Email-адрес*:</label>
+									<input id="ForEmail" type="email" name="email"
+										class="feedback-visable__control _req _email" value=""
+										placeholder="Email-адрес">
+								</div>
+								<div class="feedback-visable__item">
+									<label for="ForPhone" class="feedback-visable__label">Номер телефона*:</label>
+									<input id="ForPhone" type="phone" name="phone"
+										class="feedback-visable__control _req" placeholder="Номер телефона">
+								</div>
+								<div class="feedback-visable__item">
+									<label for="ForText" class="feedback-visable__label">сообщение:</label>
+									<textarea id="ForText" type="text" name="text" class="feedback-visable__control "
+										placeholder="Сообщение"></textarea>
+								</div>
+
+
+
+								<!-- Кнопка для отправки формы на сервер -->
+								<div class="feedback-visable__submit">
+									<button class="feedback-visable__submit-button" type="submit">Отправить
+										сообщение</button>
+								</div>
+								<div class="feedback-visable__error ">Форма заполнена не верно</div>
+
+
+							</form>
+						</div>
+
+					</div>
+
+
+				</div>
 			</section>
 
 
 
 		</main>
+		<footer class="footer">
+			
+		</footer>
 
 
 
