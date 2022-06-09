@@ -75,7 +75,7 @@ $(document).ready(function () {
             $('.menu').removeClass('active');
             $('.header__burger').removeClass('active');
             $('html, body').animate({
-                scrollTop: (el - 100) + 'px' // выполняем к нему скролл
+                scrollTop: (el) + 'px' // выполняем к нему скролл
             }, 500);
         }
         return false; // Отменяем переход по ссылке => и вывод якоря в адресную строку

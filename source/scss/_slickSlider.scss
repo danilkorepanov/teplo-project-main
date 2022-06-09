@@ -41,6 +41,9 @@
     position: absolute;
     z-index: 10;
     top: 50%;
+    @media (max-width:380px) {
+        opacity: 0.5;
+    }
 }
 /* Стрелка влево */
 .slick-arrow.slick-prev {
