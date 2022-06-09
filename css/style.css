@@ -247,6 +247,7 @@ span {
   font-size: 60px;
   color: orange;
   font-weight: 1000;
+  text-shadow: 2px 3px 0px white;
 }
 
 @media (max-width: 950px) {
