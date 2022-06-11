@@ -1652,6 +1652,11 @@ span {
   color: #fff;
 }
 
+.footer__item img {
+  width: 50px;
+  height: 50px;
+}
+
 .footer__item img:hover {
   -webkit-animation: name 0.3s infinite alternate;
           animation: name 0.3s infinite alternate;
