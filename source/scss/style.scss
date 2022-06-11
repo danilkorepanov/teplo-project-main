@@ -987,6 +987,7 @@ span {
 }
 
 .invest-column-packages {
+	opacity: 0;
 	font-size: 25px;
 
 	
@@ -1152,10 +1153,11 @@ span {
 
 //==================================feedback-visable==================
 .feedback-visable {
-	background: linear-gradient(rgba(1,1,1, 0.9), rgba(1,1,1,0.9)) ,url('/img/main/feedback-visable/bg.jpg') no-repeat;
+	background: linear-gradient(rgba(1,1,1, 0.9), rgba(1,1,1,0.9)) ,url('../img/main/feedback-visable/bg.jpg') no-repeat;
 	background-position: center center;
 	background-size: cover;
 	background-attachment: fixed;
+	padding: 50px 0;
 
 
 
@@ -1285,6 +1287,75 @@ span {
 		}
 	}
 }
+//======================================footer==========================
+.footer {
+	background: linear-gradient(rgba(1,1,1, 0.3), rgba(1,1,1,0.3)) ,url('../img/main/bg.png') no-repeat;
+	background-position: center center;
+	background-size: cover;
+	padding: 30px 0;
+
+	&__container {
+	}
+
+	&__body {
+		display: flex;
+		justify-content:space-around ;
+		@media (max-width: 550px){
+			flex-wrap: wrap;
+		}
+	}
+
+	&__column {
+		@media (max-width: 550px) {
+			display: flex;
+			flex-wrap: wrap;
+			flex: 1 1 100%;
+			&:nth-child(1){
+				justify-content: space-evenly;
+				
+			}
+			&:nth-child(2){
+				display: block;
+				
+			}
+		}
+		&>*:not(:last-child){
+			margin: 0 0 15px 0;
+		}
+	}
+
+	&__item {
+		a {
+			display: flex;
+			
+			align-items: center;
+			color: #fff;
+		}
+		img {
+			&:hover {
+				animation: name 0.3s infinite alternate;
+				
+			}
+
+		}
+		
+		
+	}
+}
+//=====================create============
+.create {
+	padding: 10px 0;
+
+	&__container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 15px;
+		opacity: 0.5;
+	}
+}
+
+
 
 
 
