@@ -1,4 +1,4 @@
-$(document).ready(function () {
+
     console.log($('.franchise-packages').offset().top)
     // анимация скролла для меню
     $(window).scroll(function () {
@@ -10,74 +10,6 @@ $(document).ready(function () {
             $('.header').removeClass('active');
         };
     });
-    // animate scroll element 
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > (($('.what-teplo').offset().top) - 200)) {
-            if($(window).width() > 1100){
-                $('.what-teplo__item.one').animate({
-                    left: 0,
-                }, 500, 'linear'
-    
-    
-                );
-                $('.what-teplo__item.two').animate({
-                    left: 0,
-                }, 700, 'linear'
-    
-    
-                );
-                $('.what-teplo__item.three').animate({
-                    left: 0,
-                }, 900, 'linear'
-    
-    
-                );
-                
-            }
-            else {
-                $('.what-teplo__item.one').animate({
-                    left: 0,
-                }, 900, 'linear'
-    
-    
-                );
-                $('.what-teplo__item.two').animate({
-                    left: 0,
-                }, 700, 'linear'
-    
-    
-                );
-                $('.what-teplo__item.three').animate({
-                    left: 0,
-                }, 500, 'linear'
-    
-    
-                );
-            }
-           
-
-        };
-
-        if ($(this).scrollTop() > (($('.franchise-packages').offset().top) - 200)) {
-            $('.left').animate({
-                left: 0,
-                opacity: 1,
-
-            }, 500)
-            $('.right').animate({
-                left: 0,
-                opacity: 1,
-
-            }, 500)
-        }
-        if ($(this).scrollTop() > (($('.invest').offset().top) - 200)) {
-            $('.invest-column-packages').animate({
-             
-                opacity: 1,
-
-            }, 700)
-        }
-    })
     // feedback
     $(".button").click(function (e) {
         $('.feedback').addClass('active');
@@ -93,6 +25,8 @@ $(document).ready(function () {
         }, 500)
 
     });
+
+
 
 
     // ссылка якорь
@@ -122,4 +56,3 @@ $(document).ready(function () {
 
 
 
-});
