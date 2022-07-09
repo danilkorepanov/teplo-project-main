@@ -1,157 +1,149 @@
-
 'use strict';
-// feedback hiden
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('form');
-    form.addEventListener('submit', formSend);
-
-    async function formSend(e) {
-        e.preventDefault(); // выключаем стандартную работу сабмита
-        let error = formValidate(form); // проверка валидации
-        let formData = new FormData(form);
-        if (error === 0) {
-
-
-            $('.feedback__error').removeClass('feedback__error-hide');
-
-            let response = await fetch('../sendmail.php', {
-                method: 'POST',
-                body: formData
-            });
-            if (response.ok) {
-                let result = await response.json();
-                alert(result.message);
-                form.reset();
-
-
-
-            } else {
-                alert('Ошибка')
-
+const form = document.querySelectorAll('form')
+for (let index = 0; index < form.length; index++) {
+    
+    document.addEventListener('DOMContentLoaded', function (){
+        const feedback = form[index];
+    
+        feedback.addEventListener('submit', formSend);
+        
+    
+        async function formSend(e) {
+            e.preventDefault(); // выключаем стандартную работу сабмита
+            let error = formValidate(feedback); // проверка валидации\
+            let errorVisable = formValidateVisable(feedback)
+            let formData = new FormData(feedback);
+            if (error === 0 ) {
+    
+    
+                
+    
+                let response = await fetch('../sendmail.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                if (response.ok) {
+                    let result = await response.json();
+                    alert(result.message);
+                    feedback.reset();
+    
+    
+    
+                }
+                 else {
+                    alert('Ошибка')
+    
+                };
+    
+    
+    
+    
             };
-
-
-
-
-        } else {
-            $('.feedback__error').addClass('feedback__error-hide');
-        }
-
-    };
-    function formValidate(form) {
-        let error = 0;
-        let formReq = document.querySelectorAll('._req'); // все элементы которые будем проверять
-        for (let index = 0; index < formReq.length; index++) {
-            const input = formReq[index];
-            FormRemoveError(input);
-
-            if (input.classList.contains('_email')) {
-                if (emailTest(input)) {
-                    FormAddError(input); // проверка валидации для почты
-                    error++;
-
+            if (errorVisable === 0) {
+                let response = await fetch('../sendmail.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                if (response.ok) {
+                    let result = await response.json();
+                    alert(result.message);
+                    feedback.reset();
+    
+    
+    
+                }
+                 else {
+                    alert('Ошибка')
+    
                 };
 
-            } else {
-                if (input.value === '') {
-                    FormAddError(input); // проверка для остальных инпутов
-                    error++;
-                }
             };
-
-
+    
         };
-        return error;
-    };
-    function FormAddError(input) {
-        input.parentElement.classList.add('_error');
-        input.classList.add('_error');
-
-    };
-    function FormRemoveError(input) {
-        input.parentElement.classList.remove('_error');
-        input.classList.remove('_error');
-
-    };
-    const emailTest = (input) => {
-        return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
-    };
-});
-
-//feedback visable
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('form-visable');
-    form.addEventListener('submit', formSend);
-
-    async function formSend(e) {
-        e.preventDefault(); // выключаем стандартную работу сабмита
-        let error = formValidate(form); // проверка валидации
-        let formData = new FormData(form);
-        if (error === 0) {
-
-
-            $('.feedback-visable__error').removeClass('feedback-visable__error-hide');
-
-            let response = await fetch('../sendmail.php', {
-                method: 'POST',
-                body: formData
-            });
-            if (response.ok) {
-                let result = await response.json();
-                alert(result.message);
-                form.reset();
-
-
-
-            } else {
-                alert('Ошибка')
-
-            };
-
-
-
-
-        } else {
-            $('.feedback-visable__error').addClass('feedback-visable__error-hide');
-        }
-
-    };
-    function formValidate(form) {
-        let error = 0;
-        let formReq = document.querySelectorAll('._req'); // все элементы которые будем проверять
-        for (let index = 0; index < formReq.length; index++) {
-            const input = formReq[index];
-            FormRemoveError(input);
-
-            if (input.classList.contains('_email')) {
-                if (emailTest(input)) {
-                    FormAddError(input); // проверка валидации для почты
-                    error++;
-
+        function formValidate(feedback) {
+            let error = 0;
+            let formReq = document.querySelectorAll('._req'); // все элементы которые будем проверять
+            
+            for (let index = 0; index < formReq.length; index++) {
+                const input = formReq[index];
+                FormRemoveError(input);
+    
+                if (input.classList.contains('_email')) {
+                    if (emailTest(input)) {
+                        FormAddError(input); // проверка валидации для почты
+                        error++;
+    
+                    };
+    
+                } else {
+                    if (input.value === '') {
+                        FormAddError(input); // проверка для остальных инпутов
+                        error++;
+                    }
                 };
-
-            } else {
-                if (input.value === '') {
-                    FormAddError(input); // проверка для остальных инпутов
-                    error++;
-                }
+    
+    
             };
-
-
+            
+            function FormAddError(input) {
+                input.parentElement.classList.add('_error');
+                input.classList.add('_error');
+        
+            };
+            function FormRemoveError(input) {
+                input.parentElement.classList.remove('_error');
+                input.classList.remove('_error');
+        
+            };
+            return error
         };
-        return error;
-    };
-    function FormAddError(input) {
-        input.parentElement.classList.add('_error');
-        input.classList.add('_error');
+        function formValidateVisable(feedback) {
+            let errorVisable = 0;
+            let formReqVisable = document.querySelectorAll('._reqVisable'); // все элементы которые будем проверять
+            
+            for (let index = 0; index < formReqVisable.length; index++) {
+                const inputVisable = formReqVisable[index];
+                FormRemoveErrorVisable(inputVisable);
+    
+                if (inputVisable.classList.contains('_emailVisable')) {
+                    if (emailTest(inputVisable)) {
+                        FormAddErrorVisable(inputVisable); // проверка валидации для почты
+                        errorVisable++;
+    
+                    };
+    
+                } else {
+                    if (inputVisable.value === '') {
+                        FormAddErrorVisable(inputVisable); // проверка для остальных инпутов
+                        errorVisable++;
+                    }
+                };
+    
+    
+            };
+            
+            function FormAddErrorVisable(inputVisable) {
+                inputVisable.parentElement.classList.add('_error');
+                inputVisable.classList.add('_error');
+        
+            };
+            function FormRemoveErrorVisable(inputVisable) {
+                inputVisable.parentElement.classList.remove('_error');
+                inputVisable.classList.remove('_error');
+        
+            };
+            return errorVisable
+        };
+  
 
-    };
-    function FormRemoveError(input) {
-        input.parentElement.classList.remove('_error');
-        input.classList.remove('_error');
+        
+        const emailTest = (input) => {
+            return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+        };
+    
+    } );
+        
+    
+    
+}// валидация и обратная связь
 
-    };
-    const emailTest = (input) => {
-        return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
-    };
-});

@@ -1,7 +1,7 @@
 
-    console.log($('.franchise-packages').offset().top)
-    // анимация скролла для меню
-    $(window).scroll(function () {
+ $(document).ready(function () {
+     // анимация скролла для меню
+     $(window).scroll(function () {
         if ($(this).scrollTop() > 0) {
             $('.header').addClass('active');
 
@@ -26,9 +26,6 @@
 
     });
 
-
-
-
     // ссылка якорь
     $('a[href^="#"]').on('click', function (e) { // Если ссылка является якорем, то выполняем следующее:
         let link = $(this).attr('href'), // берём ссылку якоря. Она же по факту id элемента
@@ -46,10 +43,13 @@
         return false; // Отменяем переход по ссылке => и вывод якоря в адресную строку
     });
     // cлайдер
-    $('.slider-financial').slick();
+   
     $('.shope__slider').slick({
         adaptiveHeight: true,
     });
+    
+ });
+   
 
 
 

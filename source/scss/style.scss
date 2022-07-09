@@ -98,11 +98,14 @@ span {
 	display: none;
 	justify-content: center;
 	align-items: center;
-	opacity: 0;
+
+	
+
 
 		
 	&.active {
 		display: flex;
+		opacity: 0;
 		
 		
 	}
@@ -815,12 +818,6 @@ span {
 	
 
 	margin: 30px 0px 0px 0px;
-	@media (max-width:850px) {
-		padding: 0px 0px;
-		font-size: 18px;
-		flex-direction: column;
-		
-	}
 	
 	
 	
@@ -835,7 +832,6 @@ span {
 		background: rgb(29,29,29);
 		box-shadow: 0 7px 0 #000;
 		border: 1px solid rgb(49, 49, 49);
-		flex: 1 1 50%;
 		margin: 0 30px 0 30px;
 		position: relative;
 		opacity: 0;
@@ -848,14 +844,6 @@ span {
 		}
 		@media (max-width: 850px) {
 			margin: 60px 0px 0px 0px;
-		}
-		&.left {
-			left: -100px;
-			&.active{
-				left: 0;
-			}
-			
-
 		}
 		&.right {
 			right: -100px;
@@ -898,12 +886,6 @@ span {
 		text-shadow: 0 5px 0 #000;
 		@media (max-width:850px) {
 			padding: 10px 15px;
-		}
-		&.white{
-			background: #fff;
-			color: #000;
-			box-shadow: 0 5px 0 rgb(202, 202, 202);
-			text-shadow: 0 5px 0 orange;
 		}
 		@keyframes name {
 			from {
@@ -976,32 +958,14 @@ span {
 
 	}
 
-	&__column {
+	&__body {
 		line-height: 1.2;
+		display: flex;
+		justify-content: center;
 		
 	
 		
 	}
-	&__slider{
-		min-width: 0;
-	}
-}
-
-.slider-financial {
-	background: rgb(29,29,29);
-
-	border-radius: 30px;
-	box-shadow: 0 5px 0 #000;
-	display: flex;
-	padding: 30px 0;
-	
-
-	align-items: center;
-	min-width: 0;
-	position: relative;
-
-
-
 	&__item-body {
 		& > *:not(:last-child){
 			margin: 0px 0px 20px 0px;
@@ -1013,7 +977,10 @@ span {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		flex: 0 1 70%;
 		padding: 20px;
+		background: rgb(29,29,29);
+		border-radius: 30px;
 	
 	}
 
@@ -1034,6 +1001,8 @@ span {
 			font-size: 35px;
 			padding: 20px 30px;
 			border-radius: 15px;
+			background: orange;
+			text-shadow: 0 5px 0 #000;
 			@media (max-width:580px) {
 				padding: 10px 15px;
 				font-size: 25px;
@@ -1041,24 +1010,12 @@ span {
 
 
 		}
-		&.orange{
-			
-			background: orange;
-			box-shadow: 0 5px 0 rgb(209, 136, 0);
-			text-shadow: 0 5px 0 #000;
-			
 
-		}
-		&.white{
-
-			background: #fff;
-			text-shadow: 0 5px 0 orange;
-
-			color: #000;
-			box-shadow: 0 5px 0 rgb(202, 202, 202);
-		}
-	}
 }
+
+}
+
+
 // =====================================invest ==================================
 
 .invest {
@@ -1093,18 +1050,21 @@ span {
 		display: flex;
 		z-index: 10;
 		position: relative;
-		@media (max-width:960px) {
-			justify-content: center;
-		}
+		justify-content: center;
 		
+		
+
 		
 		
 	}
 
 	&__column {
-		display: flex;
-		position: relative;
+
+
 		z-index: 9;
+		position: relative;
+		flex: 1 1 100%;
+		
 		
 	
 	
@@ -1117,6 +1077,13 @@ span {
 	opacity: 0;
 	font-size: 25px;
 	transition: all 0.8s ease 0s;
+	display: flex;
+	justify-content: center;
+
+	
+	
+	
+
 	&.active {
 		transition: all 0.8s ease 0s;
 		opacity: 1;
@@ -1127,39 +1094,26 @@ span {
 	
 
 	margin: 30px 0px 0px 0px;
-	@media (max-width:960px) {
-		font-size: 18px;
-		flex-direction: column;
-	}
 	
 	
 	
 	&__body {
+		text-align: center;
+		
 		border-radius: 30px;
 		background: orange;
 		box-shadow: 0 7px 0 rgb(190, 124, 2);
 		border: 1px solid rgb(49, 49, 49);
-		margin: 0 30px 0 30px;
 		padding: 30px 50px;
 		text-shadow: 0 2px 0 #000;
+		flex: 0 1 80%;
+		font-weight: 700;
 		
-		@media (max-width: 960px) {
-			margin: 60px 0px 0px 0px;
-			flex: 1 1 100%;
-		}
-		&.white {
-			background: white;
-			color: #000;
-			box-shadow: 0 7px 0 rgb(216, 216, 216);
-			text-shadow: 0 2px 0 orange;
-			
-			
-
-		}
 
 
 	}
 	&__item-list {
+		
 
 		&>*:not(:last-child){
 			margin: 0px 0px 40px 0px;
@@ -1168,15 +1122,11 @@ span {
 	}
 
 	&__name-pack {
-		font-size: 40px;
-		&.white {
-			text-shadow: 0 5px 0 orange;
-
-		}
+		font-size: 50px;
 		text-shadow: 0 5px 0 #000;
 	
 		@media (max-width:850px) {
-			font-size: 25px;
+			font-size: 40px;
 		}
 		margin: 0px 0px 20px 0px;
 	
@@ -1190,7 +1140,8 @@ span {
 	background-size: cover;
 	background-position: center center;
 	background-attachment: fixed;
-	padding: 30px 0px 200px 0px;
+	padding: 50px 0px;
+
 
 	&__container {
 	}
@@ -1224,31 +1175,17 @@ span {
 	}
 
 
-	&__item-one{
+	&__item-uniform{
 	
-		margin: 100px 0px 0px 0px;
 		position: relative;
 		img {
-			max-width: 500px;
-			@media (max-width:500px) {
-				max-width: 300px;
-			}
+			max-width: 100%;
 
 		}
 	}
-	&__item-two {
-		position: absolute;
-		bottom: -100px;
-		left: 50%;
-		
-		img {
-			max-width: 150px;
-			@media (max-width:500px) {
-				max-width: 100px;
-			}
-		}
+	
 
-	}
+	
 }
 // ============================shope===========================
 .shope {
